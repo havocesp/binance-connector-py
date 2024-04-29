@@ -129,8 +129,7 @@ class API(object):
             for key in response.headers.keys():
                 key = key.lower()
                 if (
-                    key.startswith("x-mbx-used-weight")
-                    or key.startswith("x-mbx-order-count")
+                    key.startswith(("x-mbx-used-weight", "x-mbx-order-count"))
                     or key.startswith("x-sapi-used")
                 ):
                     limit_usage[key] = response.headers[key]
